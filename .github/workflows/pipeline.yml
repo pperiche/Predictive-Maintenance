@@ -1,7 +1,8 @@
 name: Predictive Maintenance
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
 
