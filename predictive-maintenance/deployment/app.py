@@ -3,19 +3,13 @@ import pandas as pd
 from huggingface_hub import hf_hub_download
 import joblib
 
-# Download and load the model from Hugging Face Hub
+# Loading the model
 try:
-    model_path = hf_hub_download(
-        repo_id="PratzPrathibha/predictive-maintenance-model",
-        filename="random_forest_model.pkl"
-    )
-    model = joblib.load(model_path)
+    model = joblib.load("random_forest_model_v1.joblib")
     st.success("Model loaded successfully")
 except Exception as e:
     st.error(f"Model loading failed: {e}")
     st.stop()
-
-model = joblib.load(model_path)
 
 # ==============================
 # Streamlit UI
